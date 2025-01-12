@@ -1,0 +1,93 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark container background */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Dark shadow for depth */
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* Light text color for headings */
+}
+
+.form-container {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    color: #b0b0b0; /* Light grey label text */
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444444; /* Dark border color */
+    border-radius: 5px;
+    background-color: #333333; /* Dark input background */
+    color: #ffffff; /* White text in input */
+}
+
+form input::placeholder {
+    color: #888888; /* Placeholder text color */
+}
+
+form button {
+    padding: 10px;
+    background-color: #6200ea; /* Purple background for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #3700b3; /* Darker purple when hovered */
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    color: #b0b0b0; /* Light grey text for paragraph */
+}
+
+p span {
+    color: #bb86fc; /* Light purple for the link */
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#login-form {
+    display: block;
+}
+
+#signup-form {
+    display: none;
+}
