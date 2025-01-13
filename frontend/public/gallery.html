@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <img src="./satya.png" alt="logo" class="header-logo" />
+      <h1>अपना नौगांव</h1>
+    </header>
+    
+    <nav class="navbar">
+      <ul>
+        <li><a href="App.js">HOME</a></li>
+        <li><a href="#Gallery" class="active">GALLERY</a></li>
+        <li><a href="naugaon.html">AAPKA NAUGAON</a>
+        </li>
+        <li><a href="communities.html">COMMUNITIES</a></li>
+        <li><a href="#aboutus">ABOUT US</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Gallery Section -->
+    <section id="Gallery" class="gallery-section">
+      <h2>OUR REAL LIFE HEROES</h2>
+      
+      <!-- Gallery Container -->
+      <div class="gallery-container">
+        
+      </div>
+      
+      <!-- Upload Button -->
+      <div class="upload-container">
+        <label for="fileInput" class="upload-label">Upload Image</label>
+        <input type="file" id="fileInput" accept="image/*" multiple />
+      </div>
+    </section>
+    
+    <footer>
+      <p>&copy; 2025 Apna Naugaon. All rights reserved.</p>
+    </footer>
+    
+    <!-- Include the gallery.js -->
+    <script src="gallery.js"></script>
+  </body>
+</html>
