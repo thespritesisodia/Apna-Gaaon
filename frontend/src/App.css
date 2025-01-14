@@ -27,7 +27,45 @@
 .App-header h1 {
   font-family: "Madimi One", serif;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.highlight-donating {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2.5rem;
+  animation: colorChange 9s infinite; /* 9s for 3 colors, infinite loop */
+}
+
+/* Define the keyframes for color transitions */
+@keyframes colorChange {
+  0% {
+    color: green;
+  }
+  33.33% {
+    color: red;
+  }
+  66.66% {
+    color: blueviolet;
+  }
+  100% {
+    color: green;
+  }
+}
+.logo-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.heading-logo {
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  margin-top: -30px;
 }
 
 .header-container {
@@ -37,15 +75,67 @@
   align-items: center;
 }
 
+h2{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: oblique;
+}
+
+
 /* Second Logo */
-.Second-Logo {
-  width: 80px;
-  height: auto;
-  position: absolute;
-  top: 25px;
-  left: 20px;
-  opacity: 0.9;
-  z-index: 2;
+/* Second Logo */
+.second-logo-container {
+  position: absolute; /* Position relative to the parent container */
+  top: 10px; /* Adjust top position as needed */
+  left: 10px; /* Adjust left position as needed */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.second-logo {
+  width: 70px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0.9; /* Slight transparency */
+}
+
+/* Bottom Box Styling */
+.bottom-box {
+  display: flex;
+  position: relative;
+  margin-top: 35%;
+  display: flex;
+  justify-content: space-around; /* Even spacing between items */
+  align-items: center; /* Vertically center items */
+  height: 10vh; /* Set height of the box */
+  background-color: mediumseagreen; /* Light background for visibility */
+  border-top: 2px solid #ccc; /* Optional: Add a top border */
+}
+
+
+.stat {
+  display: flex;
+  flex-direction: column; /* Stack icon, name, and count vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;
+  flex: 1; /* Equal space for all stats */
+}
+
+.stat-icon {
+  width: 40px; /* Adjust icon size */
+  height: 40px;
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1rem; /* Adjust font size */
+  color: black; /* Text color */
+}
+
+.stat p {
+  margin: 0;
+  font-size: 0.9rem; /* Adjust count font size */
+  color: black; /* Text color for counts */
+  font-weight: bold; /* Bold font for emphasis */
 }
 
 /* Social Media Icons */
@@ -53,7 +143,7 @@
   display: flex;
   position: absolute;
   top: 2.5%;
-  right: 110px; /* Adjust this value to position it properly */
+  right: 30px; /* Adjust this value to position it properly */
   gap: 15px;
   z-index: 2;
 }
@@ -105,7 +195,9 @@
 }
 
 .login-button {
-  padding: 8px 20px;
+  right: 5px;
+  position: relative;
+  padding: 10px 20px;
   background-color: white;
   color: black;
   border: none;
@@ -123,7 +215,7 @@
 /* Search Box */
 .search-box-container {
   position: absolute;
-  top: 10%;
+  top: 10.5%;
   right: 20px;
   transform: translateY(-50%);
   z-index: 2;
@@ -246,4 +338,205 @@
 /* App Links */
 .App-link {
   color: #61dafb;
+}
+
+.donation-section {
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.donation-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.donation-box {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.donation-box p {
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+.donation-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.donation-box:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.donation-box .hover-text {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+.donation-box:hover .hover-text {
+  opacity: 1; /* Show the text on hover */
+}
+
+.trust-section {
+  gap: 10px;
+  position: relative;
+  background-color: white;
+  padding: 33px;
+  border-radius: 10px;
+  margin: 0px;
+  color: black;
+  text-align: center;
+}
+
+.trust-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: mediumseagreen;
+}
+
+.trust-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.trust-box {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.trust-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: darkgreen;
+}
+
+.trust-box p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.donors-section {
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0px;
+  color: black;
+  text-align: center;
+}
+
+.donors-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: rgb(81, 81, 230);
+}
+.donors-carousel {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+  animation: scroll-carousel 15s linear infinite;
+}
+.donors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.donor-box {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donor-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.donor-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.donor-box h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.donor-box p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.donation-amount {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
