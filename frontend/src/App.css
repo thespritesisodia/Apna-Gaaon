@@ -48,6 +48,53 @@
   z-index: 2;
 }
 
+/* Social Media Icons */
+.social-icons-container {
+  display: flex;
+  position: absolute;
+  top: 2.5%;
+  right: 110px; /* Adjust this value to position it properly */
+  gap: 15px;
+  z-index: 2;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.hindi-site-container {
+  position: absolute;
+  top: 2%; /* Adjust this value to position it above the search box */
+  right: 30px; /* Adjust this value to space it properly from the right */
+  z-index: 2;
+}
+
+.hindi-site-button {
+  padding: 8px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hindi-site-button:hover {
+  background-color: darkmagenta;
+  color: white;
+}
+
+
 /* Login Button */
 /* Login Button */
 .login-container {
