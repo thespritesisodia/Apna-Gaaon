@@ -341,7 +341,7 @@ h2{
 }
 
 .donation-section {
-  margin: 20px 0;
+  margin: 0px;
   padding: 20px;
   text-align: center;
   background-color: white;
@@ -464,56 +464,78 @@ h2{
 }
 
 .donors-section {
-  background-color: #f8f8f8;
-  padding: 30px;
-  border-radius: 10px;
   margin: 0px;
-  color: black;
+  padding: 20px;
   text-align: center;
+  background-color: white;
+  border-radius: 10px;
 }
+
 
 .donors-section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: rgb(81, 81, 230);
 }
-.donors-carousel {
-  display: flex;
-  gap: 20px;
-  overflow: hidden;
-  position: relative;
-  animation: scroll-carousel 15s linear infinite;
-}
+
 .donors-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  justify-content: center;
+}
+
+
+/* Carousel Container */
+.donors-slideshow {
+  overflow: hidden; /* Hides content outside the container */
+  width: 100%;
+  position: relative;
   margin-top: 20px;
 }
 
+/* Slideshow Track */
+.slideshow-track {
+  display: flex;
+  
+  gap: 20px;
+  animation: slideshow 30s linear infinite; /* Automatically scroll */
+  width: calc(10 * 200px); /* Adjust width for the total number of slides */
+}
+
+/* Individual Donor Slide */
+/* Donors Grid */
+.donors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid layout for responsive design */
+  gap: 20px; /* Space between boxes */
+  padding: 20px; /* Optional: add padding for spacing within the container */
+}
+
+/* Individual Donor Box */
 .donor-box {
-  flex: 0 0 auto;
-  width: 150px;
   text-align: center;
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white; /* Box background */
+  padding: 20px; /* Space inside the box */
+  border: 2px solid #ccc; /* Adds a border around the box */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 10px; /* Space between image, name, and amount */
 }
 
 .donor-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-.donor-image {
-  width: 70px;
-  height: 70px;
+.donor-image{
+  width: 60px; /* Set a reasonable width */
+  height: 60px; /* Match the aspect ratio */
   border-radius: 50%;
-  margin-bottom: 10px;
-  object-fit: cover;
+  object-fit: cover; /* Ensures proper fit without distortion */
 }
 
 .donor-box h3 {
@@ -532,11 +554,54 @@ h2{
   color: #27ae60;
 }
 
-@keyframes scroll-carousel {
+
+
+
+
+
+
+/* Keyframes for Scrolling Animation */
+@keyframes slideshow {
   0% {
-    transform: translateX(0);
+    transform: translateX(0); /* Start from the first slide */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Scroll through all slides */
   }
+}
+
+/* Pause Animation on Hover */
+.slideshow-track:hover {
+  animation-play-state: paused;
+}
+
+.empty-blue-section {
+  background-color: black; /* Deep blue color */
+  height: 250px; /* You can adjust this as needed */
+  width: 100%;
+  margin-top: 0px; /* Space from the previous section */
+  position: relative;
+}
+
+.link-section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 15px; /* Small text */
+  padding: 0 5px;
+}
+
+.link-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.link-section a:hover {
+  text-decoration: underline;
 }

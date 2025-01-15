@@ -21,6 +21,13 @@ import povertyIcon from './images/poverty.webp';
 import animalCareIcon from './images/animalcare.jpg';
 import disasterReliefIcon from './images/disaster.jpg';
 
+import donor1 from './images/donor1.JPG';
+import donor2 from './images/donor2.JPG';
+import donor3 from './images/donor3.JPG';
+import donor4 from './images/donor4.JPG';
+import donor5 from './images/donor5.JPG';
+import donor6 from './images/donor6.JPG';
+
 
 const App = () => {
   const [counts] = useState({
@@ -187,12 +194,12 @@ const App = () => {
   <h2>OUR DONORS</h2>
   <div className="donors-grid">
     {[
-      { img: "donor1.jpg", name: "John Doe", amount: "$500" },
-      { img: "donor2.jpg", name: "Jane Smith", amount: "$300" },
-      { img: "donor3.jpg", name: "David Lee", amount: "$1000" },
-      { img: "donor4.jpg", name: "Emily Carter", amount: "$700" },
-      { img: "donor5.jpg", name: "Michael Brown", amount: "$400" },
-      { img: "donor6.jpg", name: "Sophia Green", amount: "$200" },
+      { img: donor1, name: "PINCHII", amount: "$500" },
+      { img: donor2, name: "DRIVER", amount: "$300" },
+      { img: donor3, name: "THREESOME", amount: "$1000" },
+      { img: donor4, name: "KASHISH(consent)", amount: "$700" },
+      { img: donor5, name: "SOFIA", amount: "$400" },
+      { img: donor6, name: "AYUSH KUMAR GUPTA", amount: "$200" },
       { img: "donor7.jpg", name: "Oliver White", amount: "$600" },
       { img: "donor8.jpg", name: "Emma Black", amount: "$800" },
       { img: "donor9.jpg", name: "Liam Gray", amount: "$350" },
@@ -206,6 +213,22 @@ const App = () => {
     ))}
   </div>
 </div>
+
+{/* Empty Blue Section */}
+
+<div className="empty-blue-section">
+  {/* Small section with links */}
+  <div className="link-section">
+    <a href="#Link1">Website Policy</a>
+    <a href="#Link2">Copyright Policy</a>
+    <a href="#Link3">Privacy Policy</a>
+    <a href="#Link4">T&C</a>
+    <a href="#Link5">AIM</a>
+    <a href="#Link6">Web Information Manager</a>
+  </div>
+
+</div>
+
     </div>
   );
 };
