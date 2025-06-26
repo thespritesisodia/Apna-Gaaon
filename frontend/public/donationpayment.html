@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Payment</title>
+    <link rel="stylesheet" href="donationpayment.css"> <!-- Link to your custom styles -->
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Make Your Donation</h1>
+        <p>Choose a payment method to complete your donation</p>
+
+        <!-- Payment Options Section -->
+        <div class="payment-options">
+            <div class="payment-method">
+                <h3>Debit/Credit Card</h3>
+                <p>Use your card for an easy and secure donation</p>
+                <button class="pay-button" onclick="window.location.href='https://www.stripe.com'">Pay with Card</button>
+            </div>
+
+            <div class="payment-method">
+                <h3>UPI</h3>
+                <p>Use your UPI ID for quick payment</p>
+                <div class="upi-section">
+                    <img src="upi-qr-code.png" alt="UPI QR Code">
+                    <p>Scan the QR Code or use this UPI ID: <strong>yourupiid@upi</strong></p>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h3>Bank Transfer</h3>
+                <p>Transfer directly to our account</p>
+                <div class="bank-details">
+                    <p><strong>Bank Name:</strong> XYZ Bank</p>
+                    <p><strong>Account Number:</strong> 1234567890</p>
+                    <p><strong>IFSC Code:</strong> XYZ1234</p>
+                    <button class="pay-button" onclick="window.location.href='mailto:donations@ourwebsite.com'">Contact Us</button>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h3>PayPal</h3>
+                <p>Donate via PayPal for easy and secure transactions</p>
+                <button class="pay-button" onclick="window.location.href='https://www.paypal.com'">Donate with PayPal</button>
+            </div>
+        </div>
+        
+        <!-- Back Button to Previous Page -->
+        <button class="back-button" onclick="window.history.back()">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

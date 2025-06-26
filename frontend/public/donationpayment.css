@@ -1,0 +1,145 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.payment-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Payment Options Section */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.payment-method {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.payment-method:hover {
+    transform: translateY(-10px);
+}
+
+.payment-method h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.payment-method p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.pay-button {
+    font-size: 18px;
+    color: white;
+    background-color: #28a745;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.pay-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* UPI Section */
+.upi-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.upi-section img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.upi-section p {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Bank Transfer Section */
+.bank-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bank-details p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.bank-details strong {
+    font-weight: bold;
+}
+
+/* Footer Section */
+.back-button {
+    margin-top: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

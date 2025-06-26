@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Form</title>
+    <link rel="stylesheet" href="donation.css" />
+    <!-- Add reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <header>
+      <img src="./satya.png" alt="logo" class="header-logo" />
+      <h1>अपना नौगांव</h1>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#aboutus" class="active">DONATIONS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Donation Section -->
+    <section class="donation-container">
+      <div class="donation-left">
+        <h2>Why Donate?</h2>
+        <p>
+          Your contributions can bring change to the lives of many people in our community. Every donation
+          helps us improve the quality of life for those in need. Whether it is to help with medical expenses, 
+          education, or providing food and shelter, your donation makes a real difference.
+        </p>
+        <p>
+          Join us in our mission to make the world a better place by contributing towards various causes.
+        </p>
+      </div>
+
+      <!-- Donation Form Section -->
+      <div class="donation-right">
+        <h2>Donor Details</h2>
+        <form class="donation-form" id="donationForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Birth Date</label>
+            <input type="date" id="birthdate" name="birthdate" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="text" id="whatsapp" name="whatsapp" required placeholder="Enter your WhatsApp number" />
+          </div>
+          <div class="form-group">
+            <label for="donation-amount">Donation Amount</label>
+            <input type="number" id="donation-amount" name="donation-amount" required placeholder="Enter donation amount" />
+          </div>
+
+          <!-- Suggested Amounts (Horizontal) -->
+          <div class="amount-options">
+            <button type="button" class="amount-option">50</button>
+            <button type="button" class="amount-option">100</button>
+            <button type="button" class="amount-option">200</button>
+            <button type="button" class="amount-option">500</button>
+            <button type="button" class="amount-option">1000</button>
+          </div>
+
+          <!-- Captcha Section -->
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6Ld2KLwqAAAAAEZIvrjXP382KMdmqRsvToiblg8z"></div>
+          </div>
+
+          <!-- Privacy Policy Section -->
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="privacy-policy" name="privacy-policy" required />
+              I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="donate-button">Donate</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Apna Naugaon. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
