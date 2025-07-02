@@ -77,66 +77,81 @@ const Events = () => {
       <header className="events-header">
         <h1>EVENTS</h1>
       </header>
-      <main>
-        <div className="events-main">
-          <div className="calendar-container">
-            <div className="month-year">
-              <button className="month-nav" onClick={prevMonth}>&lt;</button>
-              <span>{monthNames[currentMonth]} {currentYear}</span>
-              <button className="month-nav" onClick={nextMonth}>&gt;</button>
-            </div>
-            <div className="calendar-row calendar-weekdays">
-              {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                <div className="calendar-cell calendar-weekday" key={day}>{day}</div>
-              ))}
-            </div>
-            <div className="calendar-row calendar-days">
-              {days.map((day, idx) => {
-                if (day === null) {
-                  return <div className="calendar-cell empty-cell" key={idx}></div>;
-                }
-                const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                const isToday =
-                  day === today.getDate() &&
-                  currentMonth === today.getMonth() &&
-                  currentYear === today.getFullYear();
-                const isSpecial = specialDates.includes(dateStr);
-                return (
-                  <div
-                    className={`calendar-cell${isToday ? ' today' : ''}${isSpecial ? ' special-day' : ''}${selectedDate === dateStr ? ' selected-day' : ''}`}
-                    key={idx}
-                    onClick={() => setSelectedDate(dateStr)}
-                  >
-                    {day}
-                  </div>
-                );
-              })}
+      <div className="events-black-bg">
+        <main>
+          <div className="events-layout">
+            <aside className="events-sidebar">
+              <h3>MENU</h3>
+              <ul className="sidebar-menu">
+                <li>Register a new event</li>
+                <li>Upcoming Events</li>
+                <li>History of Events</li>
+                
+                <li>Event Gallery</li>
+                <li>Terms and Conditions</li>
+              </ul>
+            </aside>
+            <div className="events-main">
+              <div className="calendar-container">
+                <div className="month-year">
+                  <button className="month-nav" onClick={prevMonth}>&lt;</button>
+                  <span>{monthNames[currentMonth]} {currentYear}</span>
+                  <button className="month-nav" onClick={nextMonth}>&gt;</button>
+                </div>
+                <div className="calendar-row calendar-weekdays">
+                  {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+                    <div className="calendar-cell calendar-weekday" key={day}>{day}</div>
+                  ))}
+                </div>
+                <div className="calendar-row calendar-days">
+                  {days.map((day, idx) => {
+                    if (day === null) {
+                      return <div className="calendar-cell empty-cell" key={idx}></div>;
+                    }
+                    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const isToday =
+                      day === today.getDate() &&
+                      currentMonth === today.getMonth() &&
+                      currentYear === today.getFullYear();
+                    const isSpecial = specialDates.includes(dateStr);
+                    return (
+                      <div
+                        className={`calendar-cell${isToday ? ' today' : ''}${isSpecial ? ' special-day' : ''}${selectedDate === dateStr ? ' selected-day' : ''}`}
+                        key={idx}
+                        onClick={() => setSelectedDate(dateStr)}
+                      >
+                        {day}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="event-list">
+                <h2>Events on <span className="selected-date">{selectedDate}</span></h2>
+                <ul className="events">
+                  {getEventsForDate(selectedDate).length > 0 ? (
+                    getEventsForDate(selectedDate).map((event, i) => (
+                      <li key={i}>{event.title}</li>
+                    ))
+                  ) : (
+                    <li>No events for this day.</li>
+                  )}
+                </ul>
+                <h2>Upcoming Events</h2>
+                <ul className="events">
+                  {getUpcomingEvents().length > 0 ? (
+                    getUpcomingEvents().map((event, i) => (
+                      <li key={i}><strong>{event.title}</strong> - {event.date}</li>
+                    ))
+                  ) : (
+                    <li>No upcoming events.</li>
+                  )}
+                </ul>
+              </div>
             </div>
           </div>
-          <div className="event-list">
-            <h2>Events on <span className="selected-date">{selectedDate}</span></h2>
-            <ul className="events">
-              {getEventsForDate(selectedDate).length > 0 ? (
-                getEventsForDate(selectedDate).map((event, i) => (
-                  <li key={i}>{event.title}</li>
-                ))
-              ) : (
-                <li>No events for this day.</li>
-              )}
-            </ul>
-            <h2>Upcoming Events</h2>
-            <ul className="events">
-              {getUpcomingEvents().length > 0 ? (
-                getUpcomingEvents().map((event, i) => (
-                  <li key={i}><strong>{event.title}</strong> - {event.date}</li>
-                ))
-              ) : (
-                <li>No upcoming events.</li>
-              )}
-            </ul>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 };

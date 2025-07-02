@@ -179,4 +179,124 @@ body.events-bg {
 
 body.events-bg .App {
   background: none !important;
+}
+
+.events-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.events-sidebar {
+  background: #111;
+  color: #fff;
+  min-width: 200px;
+  max-width: 220px;
+  padding: 32px 18px 32px 18px;
+  border-radius: 16px;
+  margin: 10px 24px 25px 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  height: fit-content;
+}
+
+.events-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.events-sidebar h3::after {
+  content: '';
+  display: block;
+  margin: 7px auto 0 auto;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #fff 60%, #4CAF50 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px #fff8, 0 1px 4px #4CAF5088;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  font-size: 1.05rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-menu li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-menu li:hover {
+  background: #222;
+  color: #4CAF50;
+}
+
+@media (max-width: 900px) {
+  .events-layout {
+    flex-direction: column;
+  }
+  .events-sidebar {
+    margin: 10px 0 18px 0;
+    max-width: 100vw;
+    border-radius: 12px;
+  }
+}
+
+.events-black-bg {
+  background: #111;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.events-header {
+  z-index: 2;
+  position: relative;
+}
+
+.events-layout {
+  z-index: 2;
+  position: relative;
+}
+
+.events-main {
+  background: transparent;
+}
+
+.calendar-container, .event-list {
+  background: #181818;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.event-list h2, .selected-date {
+  color: #4CAF50;
+}
+
+@media (max-width: 900px) {
+  .events-black-bg {
+    min-height: unset;
+    width: 100vw;
+  }
 } 
