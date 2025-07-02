@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Events.css';
+import { Link } from 'react-router-dom';
 
 const EVENTS = [
   { date: '2025-01-15', title: 'Village Festival' },
@@ -83,7 +84,7 @@ const Events = () => {
             <aside className="events-sidebar">
               <h3>MENU</h3>
               <ul className="sidebar-menu">
-                <li>Register a new event</li>
+                <li><Link to="/login" style={{ color: 'inherit', textDecoration: 'none' }}>Register a new event</Link></li>
                 <li>Upcoming Events</li>
                 <li>History of Events</li>
                 

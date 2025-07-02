@@ -199,10 +199,11 @@ h2{
 
 .login-button {
   right: 5px;
+  top: -8px;
   position: relative;
   padding: 10px 20px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;

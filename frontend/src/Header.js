@@ -6,6 +6,7 @@ import whIcon from './images/whatsapp.webp';
 import instaIcon from './images/instagram.webp';
 import xIcon from './images/x.jpg';
 import satyaLogo from './images/satya.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header className="header-container">
@@ -29,6 +30,9 @@ const Header = () => (
       <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
         <img src={instaIcon} alt="Instagram" className="header-social-icon" />
       </a>
+    </div>
+    <div className="login-container">
+      <Link to="/login" className="login-button">LOG IN</Link>
     </div>
   </header>
 );

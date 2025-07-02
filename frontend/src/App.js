@@ -7,6 +7,7 @@ import Footer from './Footer';
 import About from './About';
 import ThankYou from './ThankYou';
 import Events from './Events';
+import LoginSignup from './LoginSignup';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 
 import visitorIcon from './images/visitors.png';
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/donate/:category" element={<Donate />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/login" element={<LoginSignup />} />
           <Route path="/" element={
             <>
               {/* Newsbox */}
