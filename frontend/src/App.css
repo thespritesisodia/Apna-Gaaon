@@ -369,9 +369,13 @@ h2{
 
 .donation-box img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  max-height: 180px;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
   transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 .donation-box p {
