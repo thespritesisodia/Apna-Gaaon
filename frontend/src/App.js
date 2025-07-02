@@ -5,6 +5,7 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import About from './About';
+import ThankYou from './ThankYou';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 
 import visitorIcon from './images/visitors.png';
@@ -45,6 +46,7 @@ const App = () => {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/donate/:category" element={<Donate />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/" element={
             <>
               {/* Newsbox */}

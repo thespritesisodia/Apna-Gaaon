@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Donate.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 const whyDonateReasons = [
   "Your contribution brings real change to villagers' lives.",
@@ -14,6 +14,7 @@ const suggestedAmounts = [50, 100, 200, 500, 1000];
 
 const Donate = () => {
   const { category } = useParams();
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: '',
     birthdate: '',
@@ -39,8 +40,8 @@ const Donate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: handle donation logic
-    alert('Thank you for your donation!');
+    // TODO: handle donation logic (API call etc.)
+    navigate('/thank-you');
   };
 
   return (
@@ -92,7 +93,7 @@ const Donate = () => {
           <div className="form-group privacy-group">
             <label>
               <input type="checkbox" name="privacy" checked={form.privacy} onChange={handleChange} required />
-              I agree to the <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              I agree to the <Link to="/privacy-policy">Privacy Policy</Link>
             </label>
           </div>
           <button type="submit" className="donate-button">Donate</button>
