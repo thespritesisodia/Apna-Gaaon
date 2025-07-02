@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import './App.css';
+import Donate from './Donate';
 import Header from './Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import About from './About';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 
-import secondlogo from './images/satya.png';
 import visitorIcon from './images/visitors.png';
 import donorIcon from './images/donors.png';
 import memberIcon from './images/members.png';
@@ -37,10 +37,6 @@ const App = () => {
     volunteers: 150,
   });
 
-  const handleDonationClick = (category) => {
-    window.location.href = `/donation.html?category=${category}`;
-  };
-
   return (
     <Router>
       <div className="App">
@@ -48,6 +44,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/about" element={<About />} />
+          <Route path="/donate/:category" element={<Donate />} />
           <Route path="/" element={
             <>
               {/* Newsbox */}
@@ -87,30 +84,7 @@ const App = () => {
                 </div>
               </div>
               {/* Donation Section */}
-              <div className="donation-section">
-                <h2>MAKE THE WORLD A HAPPIER PLACE BY <span className="highlight-donating">donating</span></h2>
-                <div className="donation-grid">
-                  {[
-                    { img: womenEmpIcon, label: "Women Empowerment" },
-                    { img: childLabourIcon, label: "Child Labour" },
-                    { img: environmentIcon, label: "Environment Protection" },
-                    { img: educationIcon, label: "Education" },
-                    { img: healthIcon, label: "Healthcare" },
-                    { img: povertyIcon, label: "Poverty Alleviation" },
-                    { img: animalCareIcon, label: "Animal Care" },
-                    { img: disasterReliefIcon, label: "Disaster Relief" },
-                  ].map(({ img, label }) => (
-                    <div
-                      key={label}
-                      className="donation-box"
-                      onClick={() => handleDonationClick(label)}
-                    >
-                      <img src={img} alt={label} />
-                      <div className="hover-text">Donate at {label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <DonationSection />
               {/* Why Trust Us Section */}
               <div className="trust-section">
                 <h2>WHY TRUST US?</h2>
@@ -190,30 +164,7 @@ const App = () => {
                 </div>
               </div>
               {/* Donation Section */}
-              <div className="donation-section">
-                <h2>MAKE THE WORLD A HAPPIER PLACE BY <span className="highlight-donating">donating</span></h2>
-                <div className="donation-grid">
-                  {[
-                    { img: womenEmpIcon, label: "Women Empowerment" },
-                    { img: childLabourIcon, label: "Child Labour" },
-                    { img: environmentIcon, label: "Environment Protection" },
-                    { img: educationIcon, label: "Education" },
-                    { img: healthIcon, label: "Healthcare" },
-                    { img: povertyIcon, label: "Poverty Alleviation" },
-                    { img: animalCareIcon, label: "Animal Care" },
-                    { img: disasterReliefIcon, label: "Disaster Relief" },
-                  ].map(({ img, label }) => (
-                    <div
-                      key={label}
-                      className="donation-box"
-                      onClick={() => handleDonationClick(label)}
-                    >
-                      <img src={img} alt={label} />
-                      <div className="hover-text">Donate at {label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <DonationSection />
               {/* Why Trust Us Section */}
               <div className="trust-section">
                 <h2>WHY TRUST US?</h2>
@@ -258,6 +209,37 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+  );
+};
+
+const DonationSection = () => {
+  const navigate = useNavigate();
+  const donationOptions = [
+    { img: womenEmpIcon, label: "Women Empowerment" },
+    { img: childLabourIcon, label: "Child Labour" },
+    { img: environmentIcon, label: "Environment Protection" },
+    { img: educationIcon, label: "Education" },
+    { img: healthIcon, label: "Healthcare" },
+    { img: povertyIcon, label: "Poverty Alleviation" },
+    { img: animalCareIcon, label: "Animal Care" },
+    { img: disasterReliefIcon, label: "Disaster Relief" },
+  ];
+  return (
+    <div className="donation-section">
+      <h2>MAKE THE WORLD A HAPPIER PLACE BY <span className="highlight-donating">donating</span></h2>
+      <div className="donation-grid">
+        {donationOptions.map(({ img, label }) => (
+          <div
+            key={label}
+            className="donation-box"
+            onClick={() => navigate(`/donate/${encodeURIComponent(label)}`)}
+          >
+            <img src={img} alt={label} />
+            <div className="hover-text">Donate at {label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
