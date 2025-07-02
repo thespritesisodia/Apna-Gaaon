@@ -7,7 +7,7 @@ const Navbar = () => (
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><a href="#History">History</a></li>
-      <li><a href="events.html">Events</a></li>
+      <li><Link to="/events">Events</Link></li>
       <li><a href="communities.html">Communities</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li className="dropdown">
